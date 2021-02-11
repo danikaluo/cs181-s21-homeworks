@@ -1,0 +1,135 @@
+PWD /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1
+INPUT /Users/danikaluo/Library/TinyTeX/texmf.cnf
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/homework1.tex
+OUTPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/homework1.log
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Desktop/CS 181/cs181-s21-homeworks/hw1/harvardml.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /Users/danikaluo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty

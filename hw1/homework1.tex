@@ -118,18 +118,104 @@ differently when defining similarity.
   Important: When computing the prediction $f(x_i)$ for a point $x_i$
   in the training set, carefully consider for which points $x'$ you should be including
   the term $K(x_i,x')$ in the sum.
-  
+      \begin{equation*}
+      \begin{split}
+        L(W) & = \sum_{n=1}^{N}(y_n-f^*(x_n))^2 \\
+        & = \sum_{n=1}^{N}\left(y_n-\frac{\sum_{n'=1,n\neq n'}^{N}K(x_n,x_{n'})y_{n'}}{\sum_{n'=1,n\neq n'}^{N}K(x_n,x_{n'})}\right)^2 \\
+        & = \sum_{n=1}^{N}\left(y_n-\frac{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_n-x_{n'})^T W (x_n-x_{n'}) )y_{n'}}{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_n-x_{n'})^T W (x_n-x_{n'}) )}\right)^2
+      \end{split}
+      \end{equation*}
+
 \item In the following, let us assume that $D = 2$.  That means that
   $W$ has three parameters: $W_{11}$, $W_{22}$, and $W_{12} = W_{21}$.
   Expand the formula for the loss function to be a function of these
   three parameters.
-  
- \item Derive the gradients of the loss function with respect to each of the parameters of $W$ for the $D=2$ case. (This will look a bit messy!)
-
-
-
+    \begin{equation*}
+    \begin{split}
+        L(W) & = \sum_{n=1}^{N}\left(y_n-\frac{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_n-x_{n'})^T W (x_n-x_{n'}) )y_{n'}}{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_n-x_{n'})^T W (x_n-x_{n'}) )}\right)^2 \\
+        & = \sum_{n=1}^{N}\left(y_n-\frac{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_n-x_{n'})^T \begin{bmatrix}
+        W_{11} & W_{12} \\  
+        W_{21} & W_{22} 
+        \end{bmatrix}(x_n-x_{n'}) )y_{n'}}{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_n-x_{n'})^T \begin{bmatrix}
+        W_{11} & W_{12} \\  
+        W_{21} & W_{22} 
+        \end{bmatrix}
+        (x_n-x_{n'}) )}\right)^2
+    \end{split}
+    \end{equation*}
 \end{enumerate}
 \end{problem}
+\newpage
+\begin{framed}
+\noindent\textbf{Problem 1} (cont.)\\
+\begin{equation*}
+    \begin{split}
+        & (x_n-x_{n'})^T \begin{bmatrix}
+        W_{11} & W_{12} \\  
+        W_{21} & W_{22} 
+        \end{bmatrix}(x_n-x_{n'}) \\
+        & = 
+        \begin{bmatrix}
+        x_{n,1}-x_{n',1} & x_{n,2}-x_{n',2}
+        \end{bmatrix}
+        \begin{bmatrix}
+        W_{11} & W_{12} \\  
+        W_{21} & W_{22} 
+        \end{bmatrix}
+        \begin{bmatrix}
+        x_{n,1}-x_{n',1} \\ 
+        x_{n,2}-x_{n',2}
+        \end{bmatrix} \\
+        &= \begin{bmatrix}
+        x_{n,1}-x_{n',1} & x_{n,2}-x_{n',2}
+        \end{bmatrix}
+        \begin{bmatrix}
+        W_{11}(x_{n,1}-x_{n',1}) + W_{12}(x_{n,2}-x_{n',2}) \\
+        W_{21}(x_{n,1}-x_{n',1}) + W_{22}(x_{n,2}-x_{n',2}) 
+        \end{bmatrix} \\
+        & = (x_{n,1}-x_{n',1})W_{11}(x_{n,1}-x_{n',1}) + 2(x_{n,1}-x_{n',1})W_{12}(x_{n,2}-x_{n',2}) + (x_{n,2}-x_{n',2})W_{22}(x_{n,2}-x_{n',2}) \\
+        & = (x_{n,1}-x_{n',1})^2 W_{11} + 2(x_{n,1}-x_{n',1})W_{12}(x_{n,2}-x_{n',2}) + (x_{n,2}-x_{n',2})^2 W_{22}
+    \end{split}
+    \end{equation*}
+\\
+    $L(W) =$
+    $$\sum_{n=1}^{N}\left(y_n-\frac{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_{n,1}-x_{n',1})^2 W_{11} + 2(x_{n,1}-x_{n',1})W_{12}(x_{n,2}-x_{n',2}) + (x_{n,2}-x_{n',2})^2 W_{22})y_{n'}}{\sum_{n'=1,n\neq n'}^{N}\exp(-(x_{n,1}-x_{n',1})^2 W_{11} + 2(x_{n,1}-x_{n',1})W_{12}(x_{n,2}-x_{n',2}) + (x_{n,2}-x_{n',2})^2 W_{22})}\right)^2$$
+
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Derive the gradients of the loss function with respect to each of the parameters of $W$ for the $D=2$ case. (This will look a bit messy!)
+\begin{equation*}
+    \begin{split}
+        \partial_{W_{11}}L(W) &= \partial _{W_{11}}\sum_{n=1}^{N}(y_n-f^*(x_n, W))^2 \\
+        & = \sum_{n=1}^{N}\partial_{W_{11}}(y_n-f^*(x_n, W))^2 \\
+        & = \sum_{n=1}^{N}-2(y_n-f^*(x_n, W))\partial_{W_{11}}(f^*(x_n, W))
+    \end{split}
+\end{equation*}
+Let $a = (x_{n,1}-x_{n',1})$, $b = (x_{n,2}-x_{n',2})$. Let $c = -(a^2 W_{11} + 2abW_{12} + b^2 W_{22})$.
+\begin{equation*}
+    \partial_{W_{11}}(f^*(x_n, W)) = \partial_{W_{11}}\left(\frac{\sum\exp(c)y_{n'}}{\sum\exp(c)}\right)
+\end{equation*}
+Using the quotient rule, we get
+\begin{equation*}
+\begin{split}
+    \partial_{W_{11}}(f^*(x_n, W)) & = \frac{\partial_{W_{11}}\sum\exp(c)y_{n'}*\sum\exp(c) - \partial_{W_{11}}\sum\exp(c)* \sum\exp(c)y_{n'}}{{\sum\exp(c)}^2} \\
+    & = \frac{\sum -a^2 \exp(c)y_{n'}*\sum\exp(c) - \sum -a^2\exp(c)* \sum\exp(c)y_{n'}}{{\sum\exp(c)}^2}
+\end{split}
+\end{equation*}
+Therefore, 
+\begin{equation*}
+    \partial_{W_{11}}L(W) &= \sum_{n=1}^{N}-2(y_n-f^*(x_n, W))\frac{\sum -a^2 \exp(c)y_{n'}*\sum\exp(c) - \sum -a^2\exp(c)* \sum\exp(c)y_{n'}}{{\sum\exp(c)}^2}
+\end{equation*}
+Similarly, 
+\begin{equation*}
+    \partial_{W_{12}}L(W) &= \sum_{n=1}^{N}-2(y_n-f^*(x_n, W))\frac{\sum -2ab \exp(c)y_{n'}*\sum\exp(c) - \sum -2ab \exp(c)* \sum\exp(c)y_{n'}}{{\sum\exp(c)}^2}
+\end{equation*}
+\begin{equation*}
+    \partial_{W_{22}}L(W) &= \sum_{n=1}^{N}-2(y_n-f^*(x_n, W))\frac{\sum -b^2 \exp(c)y_{n'}*\sum\exp(c) - \sum -b^2\exp(c)* \sum\exp(c)y_{n'}}{{\sum\exp(c)}^2}
+\end{equation*}
+\end{enumerate}
+\end{framed}
 
 \newpage
 
@@ -173,6 +259,13 @@ does best?  Why?  How does the choice of $\alpha$ affect the loss?
 
 For this problem, you can use our staff \textbf{script to compare your code to a set of staff-written test cases.} This requires, however, that you use the structure of the starter code provided in \texttt{T1\_P1.py}. More specific instructions can be found at the top of the file \texttt{T1\_P1\_Testcases.py}. You may run the test cases in the command-line using \texttt{python T1\_P1\_TestCases.py}.
 \textbf{Note that our set of test cases is not comprehensive: just because you pass does not mean your solution is correct! We strongly encourage you to write your own test cases and read more about ours in the comments of the Python script.}
+
+\begin{quote}
+    For $\alpha = 10$, the loss for kernels $W_1, W_2, W_3$ are $0.33821615730087107$, $2.2263823122858097$, $0.024847637804324457$ respectively. $W_3$ does the best because the $y$ component is weighed less than the $x$ component.
+    
+    For $\alpha = 1$, the loss for the kernels are $1.1840178839616164$, $1.9565443053118377$, $1.0593632813080032$. For $\alpha = 100$, the loss is $0.3055555555610851$, $1.5016587935799697$, $3.8332638952736116e-20$
+    As $\alpha$ increases, loss increases if the prediction is not a good one and loss decreases if the prediction is good because it magnifies the differences.
+\end{quote}
 
 \item Bonus:  Code up a gradient descent to
   optimize the kernel for the data set above.  Start your gradient
@@ -228,9 +321,53 @@ For this problem, you can use our staff \textbf{script to compare your code to a
   provided in \verb|T1_P2.py|.  Please \textbf{write your own
     implementation of kNN} for full credit.  Do not use external
   libraries to find nearest neighbors.
-  
+      
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{2-1a.png}
+        \\L2 for alpha = 0.1: 1.8399712540879825
+      \end{center}
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{framed}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{2-1b.png}      
+        \\L2 for alpha = 3: 0.6200161545448001
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{2-1c.png}
+        \\L2 for alpha = 10: 0.39001293585550434
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{2-1d.png}
+        \\L2 with k = 1: 0.8383999999999999
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{2-1e.png}
+        \\L2 with k = 5: 0.46929999999999994
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{2-1f.png}
+        \\L2 with k = 12: 1.922573611111111
+      \end{center}
+\end{framed}
+      
+
+\newpage
+
+\begin{framed}
+\noindent\textbf{Problem 2} (cont.)\\
+\begin{enumerate}
+\setcounter{enumi}{1}
 \item Do any of the kernel-based regression plots look like the 1NN?
   The $(N-1)$NN?  Why or why not?
+  \begin{quote}
+      When $\alpha$ is large, the kernel-based regression is similar to the 1NN. This is because when $\alpha$ is large, we have exp(a large negative number) $\approx 0$. Since the function decays fast with increasing distance, only the nearest point will matter.
+      
+      When $\alpha$ is small, the kernel based regression looks like the $(N-1)$NN. This is because exp(a number close to zero) $\approx 1$. Thus, no matter the distance, the weights are generally uniform. Since each point matters equally, it is like $(N-1)$NN.
+  \end{quote}
 
 \item Suppose we are given some $W$ for a Mahalanobis distance or
   kernel function.  Then, in general, there exist values of $k$ for which
@@ -238,16 +375,18 @@ For this problem, you can use our staff \textbf{script to compare your code to a
   on at least one input - for all choices of $\alpha$. Explain why by means of
   an example (i.e., show that for some value $k$ of your choosing,
   no value of $\alpha$ will produce two classifiers that are the same).
+  
+  \begin{quote}
+      We want to prove $\exists k$ such that the kernel-based regression and kNN disagree on at least 1 input, $\forall \alpha$. Let $k=1$. Suppose we have a graph with three points. The point we are predicting, $x^*$ is equidistant from the two other points, label them 0 and 1. kNN with $k=1$ would arbitrarily pick the y value of either point 0 or point 1 because they are equidistant to our prediction point. On the other hand, the kernel-based regression would weigh the y values of both point 0 and point 1 equally since they are equidistant. Thus, the kernel-based regression and kNN would disagree on the input $x^*$.
+  \end{quote}
     
 \item Why did we not vary $\alpha$ for the kNN approach?    
-
+    \begin{quote}
+        We did not vary $\alpha$ for the kNN approach because kNN looks for the k nearest neighbors and gives them equal weight unlike how kernel based uses $\alpha$ to give weights to all the points in the data and are used in the prediction. $\alpha$ is only used in kNN to calculate distances but after finding the nearest neighbors, it does not affect the prediction values.
+    \end{quote}
 \end{enumerate}
 
-\end{problem}
-
-
-\newpage 
-
+\end{framed}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Problem 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,21 +413,62 @@ $y$ are scalars, $w$ is also a scalar.
     that minimizes the expected squared loss above.  You should leave
     your answer in terms of moments of the data, e.g. terms like
     $E_x[x]$, $E_x[x^2]$, $E_y[y]$, $E_y[y^2]$, $E_{x,y}[xy]$ etc.
+\begin{quote}
+    We want to minimize the expected squared loss $w=E_{x,y}[ ( y - \hat{y} )^2 ]$.
+    \begin{equation*}
+        \begin{split}
+            E_{x,y}[ ( y - \hat{y} )^2 ] & = E_{x,y}[ y^2 - 2y\hat{y} + \hat{y}^2 ] \\
+            & = E_{x,y}[y^2]-E_{x,y}[2ywx]+E_{x,y}[(wx)^2] \\
+            & = E_{x,y}[y^2]-2wE_{x,y}[yx]+w^2E_{x,y}[x^2] \\
+        \end{split}
+    \end{equation*}
+    Now we will take the derivative with respect to $w$ and set it equal to $0$ to find the minimum expected squared loss.
+    \begin{equation*}
+        \begin{split}
+            \frac{\partial}{\partial w}E_{x,y}[ ( y - \hat{y} )^2 ] & = -2E_{x,y}[yx]+2wE_{x,y}[x^2] = 0 \\
+            w & = \frac{2E_{x,y}[yx]}{2E_{x,y}[x^2]} = \frac{E_{x,y}[yx]}{E_{x,y}[x^2]}\\
+        \end{split}
+    \end{equation*}
+\end{quote}
 
 \item Provide unbiased and consistent formulas to estimate $E_{x, y}[yx]$
  and $E_x[x^2]$ given observed data $\{(x_n,y_n)\}_{n=1}^N$.
+ \begin{equation*}
+   \begin{split}
+     E_{x,y}[yx] & \approx \frac{1}{N}\sum_{n=1}^{N}y_n x_n \\
+     E_{x,y}[x^2] & \approx \frac{1}{N}\sum_{n=1}^{N} (x_n)^2
+   \end{split}
+ \end{equation*}
+ 
+\end{enumerate}
+\end{problem}
+
+\newpage
+
+\begin{framed}
+\noindent\textbf{Problem 3} (cont.)\\
+\begin{enumerate}
+\setcounter{enumi}{2}
 
 \item In general, moment terms like $E_{x, y}[yx]$, $E_{x, y}[x^2]$,
   etc. can easily be estimated from the data (like you did above).  If
   you substitute in these empirical moments, how does your expression
   for the optimal $w^*$ in this problem compare with the optimal $w^*$
   that we derived in class/Section 2.6 of the cs181-textbook?
+  
+  \begin{quote}
+      In class, we derived $w^{*}=(x^Tx)^{-1}(x^Ty)$, which is in matrix form. If $x_n, y_n\in \mathbb{R}$ then we can rewrite the equation with summation notion as $$w^*=\frac{\frac{1}{N}\sum_n x_ny_n}{\frac{1}{N}\sum_n x_n^2}.$$
+      If we substitute (3.2) into (3.1), we get $$w^*=\frac{E_{x,y}[yx]}{E_{x,y}[x^2]}=\frac{\frac{1}{N}\sum_n x_ny_n}{\frac{1}{N}\sum_n x_n^2}$$ which is the same as the equation we derived in class.
+  \end{quote}
 
 \item As discussed in lecture, many common probabilistic linear regression models assume that variables x and y are jointly Gaussian.  Did any of your above derivations rely on the assumption that x and y are jointly Gaussian?  Why or why not?
+\begin{quote}
+    None of the above derivations relied on the assumption that x and y are jointly Gaussian because we only used linearity of expectation in the previous parts.
+\end{quote}
     
 \end{enumerate}
 
-\end{problem}
+\end{framed}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -315,11 +495,11 @@ Year,Sunspot_Count,Republican_Count
 You can see scatterplots of the data in the figures below.  The horizontal axis is the Year, and the vertical axis is the Number of Republicans and the Number of Sunspots, respectively.
 
 \begin{center}
-\includegraphics[width=.5\textwidth]{data/year-republicans}
+\includegraphics[width=.5\textwidth]{year-republicans}
 \end{center}
 
 \begin{center}
-\includegraphics[width=.5\textwidth]{data/year-sunspots}
+\includegraphics[width=.5\textwidth]{year-sunspots}
 \end{center}
 
 (Data Source: \url{http://www.realclimate.org/data/senators_sunspots.txt})\\
@@ -352,6 +532,30 @@ Second, for each plot include the residual sum of squares error. Submit the gene
 
 \end{problem}
 
+\newpage
+
+\begin{framed}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{4-1a.png}      
+        \\L2 for part A: 394.9803839890886
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{4-1b.png}
+        \\L2 for part B: 54.27309661671953
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{4-1c.png}
+        \\L2 for part C: 1082.8088559867185
+      \end{center}
+      \begin{center}
+        \includegraphics[width=.5\textwidth]{4-1d.png}
+        \\L2 for part D: 39.001114836754304
+      \end{center}
+\end{framed}
+      
+
+\newpage
+
 \begin{framed}
 \noindent\textbf{Problem 4} (cont.)\\
 \begin{enumerate}
@@ -360,8 +564,28 @@ Second, for each plot include the residual sum of squares error. Submit the gene
 Now, however, only use data from before 1985, and only use basis functions (a), (c), and (d) -- ignore basis (b). You will therefore make 3 total plots. For each plot make sure to also include the residual sum of squares error.
 
 Which of the three bases (a, b, d) provided the "best" fit? \textbf{Choose one}, and keep in mind the generalizability of the model. 
+\begin{quote}
+    Basis (a) provides the "best" fit. While basis (d) has the smallest loss, it is not generalizable because it is overfitting the data. If we consider the bias-variance tradeoff, (d) has high variance and low bias. Basis (a) has a smaller loss than basis (c) and seems more generalizable.
+\end{quote}
 
 Given the quality of this fit, do you believe that the number of sunspots controls the number of Republicans in the senate (Yes or No)?
+\begin{quote}
+    No, I do not believe the number of sunspots controls the number of Republicans in the senate because the model is not a good fit on the data.
+\end{quote}
+
+\begin{center}
+    \includegraphics[width=.5\textwidth]{4-2a.png} 
+    \\ L2 for part A: 351.2279357741768
+\end{center}
+\begin{center}
+    \includegraphics[width=.5\textwidth]{4-2b.png}
+    \\ L2 for part C: 375.106757781674
+\end{center}
+\begin{center}
+    \includegraphics[width=.5\textwidth]{4-2c.png}
+    \\ L2 for part D: 7.441068192056809e-22
+\end{center}
+
 \end{enumerate}
 \end{framed}
 
@@ -372,12 +596,15 @@ Given the quality of this fit, do you believe that the number of sunspots contro
 % Name and Calibration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Name}
+Danika Luo
 
 \subsection*{Collaborators and Resources}
-Whom did you work with, and did you use any resources beyond cs181-textbook and your notes?
+Whom did you work with, and did you use any resources beyond cs181-textbook and your notes?\\
+Chao Cheng
 
 \subsection*{Calibration}
-Approximately how long did this homework take you to complete (in hours)? 
+Approximately how long did this homework take you to complete (in hours)? \\
+10 hrs
 
 \end{document}
 
